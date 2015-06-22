@@ -1,12 +1,12 @@
-en:
-  hello: "Hello world !"
-  elearning: "Framgia E-Learning System"
-  about: "About"
-  contact: "Contact"
-  home: "Home"
-  help: "Help"
-  signup: "Sign up"
-  here: "here"
+vi:
+  hello: "Xin chao !"
+  elearning: "Hệ thống học trực tuyến Framgia"
+  about: "Về chúng tôi"
+  contact: "Lien he"
+  home: "Trang chủ"
+  help: "Trợ giúp"
+  signup: "Đăng ký"
+  here: "tại đây"
   home-description: "This is the home page for the Framgia E-Learning System application."
   help-description: "This is the help page for the Framgia E-Learning System application.
     This is the help page for the Framgia E-Learning System application.
