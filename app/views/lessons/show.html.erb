@@ -34,7 +34,7 @@
             <% end %>
           </td>
           <td>
-            <%= result.word.answers.find_by(correct: 1).content %>
+            <%= result.word.answers.find_by(correct: :t).content %>
           </td>
         </tr>
       <% end %>

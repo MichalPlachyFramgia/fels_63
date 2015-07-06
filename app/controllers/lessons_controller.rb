@@ -13,8 +13,8 @@ class LessonsController < ApplicationController
     @lesson_words = @lesson.results
   end
 
-  def create # cai tao 20 word o dau model model n
-    @category = Category.find_by params[:category_id]
+  def create
+    @category = Category.find params[:category_id]
     @lesson = current_user.lessons.build category: @category
     if @lesson.save
       redirect_to edit_lesson_path @lesson
@@ -46,5 +46,3 @@ class LessonsController < ApplicationController
     params.require(:lesson).permit :category_id, results_attributes: [:id, :answer_id]
   end
 end
-
-

@@ -25,36 +25,21 @@ followers = users[3..40]
 following.each {|followed| user.follow followed}
 followers.each {|follower| follower.follow user}
 
+word_id = 0
 10.times do |n|
   name = Faker::Name.title
   content = Faker::Lorem.paragraph
   Category.create! name: name, content: content
-  40.times do |n2|
+  20.times do |n2|
     content = Faker::Lorem.word
     category_id = n+1
+    word_id = word_id + 1
     Word.create! content: content, category_id: category_id
-    Answer.create! correct: true, content: Faker::Lorem.word, word_id: n2+1
+    Answer.create! correct: 1, content: Faker::Lorem.word, word_id: word_id
     3.times do |n1|
-      correct = false
+      correct = 0
       content = Faker::Lorem.word
-      word_id = n2+1
       Answer.create! correct: correct, content: content, word_id: word_id
     end
-  end
-end
-
-word_count = 0
-
-30.times do |n| 
-  word_count+=1
-  correct_total = rand(1..20)
-  user_id = rand(1..100)
-  category_id = rand(1..10)
-  Lesson.create! correct_total: correct_total,user_id: user_id, category_id: category_id
-  20.times do |n1|
-    word_id = word_count
-    answer = Answer.find_by word: word_id
-    lesson_id = n+1
-    Result.create! word_id: word_id, answer_id: answer.id, lesson_id: lesson_id
   end
 end

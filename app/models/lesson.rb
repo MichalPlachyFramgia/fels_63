@@ -10,6 +10,7 @@ class Lesson < ActiveRecord::Base
 
   scope :total_word, ->(category, user){where("category_id = ?", category.id).
     where("user_id = ?", user.id).sum("correct_total")}
+  scope :total_learned, ->user{where("user_id = ?", user.id).sum("correct_total")}
   scope :order_desc, ->{order created_at: :DESC}
   scope :lesson_learned, ->user{where(user: user)}
   scope :follow_learned, ->user{where("user_id IN (

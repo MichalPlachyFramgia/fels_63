@@ -1,5 +1,4 @@
 class WordsController < ApplicationController
-  before_action :word_set
 
   def index
     @categories = Category.all

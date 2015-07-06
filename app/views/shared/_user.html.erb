@@ -5,7 +5,7 @@
   </h1>
   <h5>
     <%= t "learned" %> 
-    <%= @lessons.lesson_learned(@user).count * Settings.question_number %>
+    <%= Lesson.total_learned @user %>
     <%= t "words" %>
   </h5>
 </section>

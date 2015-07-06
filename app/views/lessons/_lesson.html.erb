@@ -1,6 +1,6 @@
 <%= link_to (gravatar_for lesson.user, size: Settings.gravatar.normal_size), user_path(lesson.user) %>
 <%= lesson.user.name %>
-<%= t "learned" %> <%= Settings.question_number %> 
+<%= t "learned" %> <%= Lesson.total_word lesson.category, lesson.user %> 
 <%= t "word_lesson" %> "<%= lesson.category.name %>" -
 (<%= lesson.created_at.day %>/<%= lesson.created_at.month %>/<%= lesson.created_at.year %>)
 <hr>

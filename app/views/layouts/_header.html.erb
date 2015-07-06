@@ -16,13 +16,13 @@
               <li><%= link_to t("login.profile"), current_user %></li>
               <li><%= link_to t("login.setting"), edit_user_path(current_user) %></li>
               <li>
-                <%= link_to t("login.logout"), logout_path, method: "delete" %>
+                <%= link_to t("login.logout"), session_path(current_user), method: :delete %>
               </li>
             </ul>
           </li>
           <li><%= link_to_if current_user.is_admin?, t("dashbroad"), admin_root_path %></li>
         <% else %>
-          <li><%= link_to t("login.button"), login_path %></li>
+          <li><%= link_to t("login.button"), new_session_path %></li>
         <% end %>
       </ul>
     </nav>
